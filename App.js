@@ -1,15 +1,8 @@
 import React, { useState } from "react";
-import {
-  Button,
-  StyleSheet,
-  TextInput,
-  View,
-  Text,
-  FlatList,
-} from "react-native";
+import { Button, StyleSheet, View, FlatList } from "react-native";
 import GoalInput from "./components/GoalInput";
 import GoalItem from "./components/GoalItem";
-
+import Card from "./components/Card";
 export default function App() {
   const [goals, setGoals] = useState([]);
   const [visblity, setVisblity] = useState(false);
@@ -37,6 +30,7 @@ export default function App() {
         visble={visblity}
         oncancel={cancelHandler}
       />
+      {/* <Card /> */}
       <FlatList
         keyExtractor={item => item.key}
         data={goals}

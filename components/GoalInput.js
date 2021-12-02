@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, TextInput, Button, Modal } from "react-native";
+import { View, Text, StyleSheet, TextInput, Button, Modal } from "react-native";
 
 const GoalInput = props => {
   const [enterGoals, setEnterGoals] = useState("");
@@ -10,9 +10,11 @@ const GoalInput = props => {
   return (
     <Modal visible={props.visble} animationType="slide">
       <View style={styles.addTarget}>
+        <Text style={styles.haeder}> Vecabiulary remember </Text>
+        <Text style={styles.paragraf}> Add new word to stay remember </Text>
         <TextInput
           style={styles.input}
-          placeholder="Coures Goal"
+          placeholder="New word"
           value={enterGoals}
           onChangeText={enterText => setEnterGoals(enterText)}
         />
@@ -49,6 +51,16 @@ const styles = StyleSheet.create({
   },
   btn: {
     width: "40%",
+  },
+  haeder: {
+    position: "absolute",
+    top: 80,
+    fontSize: 20,
+  },
+  paragraf: {
+    position: "absolute",
+    top: 110,
+    fontSize: 18,
   },
 });
 export default GoalInput;

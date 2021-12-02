@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity, Button } from "react-native";
 
 const GoalItem = props => {
   return (
-    <TouchableOpacity onPress={props.onDelete.bind(this, props.id)}>
+    <TouchableOpacity>
+      {/* TODO: onPress={ Go to detail page */}
       <View style={styles.GoalList}>
         <Text>{props.title}</Text>
+        <Text onPress={props.onDelete.bind(this, props.id)}>Del</Text>
       </View>
     </TouchableOpacity>
   );
@@ -17,6 +19,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#ccc",
     marginVertical: 5,
     borderWidth: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
 export default GoalItem;
